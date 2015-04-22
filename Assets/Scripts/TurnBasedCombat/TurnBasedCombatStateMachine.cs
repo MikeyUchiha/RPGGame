@@ -43,7 +43,8 @@ public class TurnBasedCombatStateMachine : MonoBehaviour {
 	void CreateButton(){
 		GameObject canvas = GameObject.Find("Canvas");
 		GameObject nextStateButton = Instantiate(button);
-		RectTransform myTransform = nextStateButton.GetComponent<RectTransform>();myTransform.SetParent(canvas.transform, false);
+		RectTransform myTransform = nextStateButton.GetComponent<RectTransform>();
+		myTransform.SetParent(canvas.transform, false);
 		nextStateButton.GetComponentInChildren<Text>().text = "Change State";
 		nextStateButton.GetComponent<Button>().onClick.AddListener(() => {ChangeState();});
 	}

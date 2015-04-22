@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BaseCharacterClass {
+public class BasePlayer {
 
-	public string CharacterClassName{get; set;}
-	public string CharacterClassDescription{get; set;}
+	public string PlayerName{get; set;}
+	public int PlayerLevel{get; set;}
+	public BaseCharacterClass PlayerClass{get; set;}
 	// Base Stats
 	public int Strength{get; set;}
 	public int Agility{get; set;}
@@ -22,13 +23,4 @@ public class BaseCharacterClass {
 	public int Accuracy{get; set;}
 	public int CritChance{get; set;}
 	public int DodgeChance{get; set;}
-
-	public BaseCharacterClass() {
-		Strength = 15;
-		Agility = 15;
-		Dexterity = 15;
-		Vitality = 15;
-		Intelligence = 15;
-		Luck = 15;
-	}
 }

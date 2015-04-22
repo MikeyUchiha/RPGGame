@@ -9,7 +9,6 @@ public class TestGUI : MonoBehaviour {
 
 	public Font font;
 	public GameObject label;
-	public GameObject button;
 
 	// Use this for initialization
 	void Start () {
