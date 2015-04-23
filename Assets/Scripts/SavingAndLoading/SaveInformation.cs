@@ -12,6 +12,11 @@ public class SaveInformation {
 		PlayerPrefs.SetInt("VITALITY", GameInformation.Vitality);
 		PlayerPrefs.SetInt("INTELLIGENCE", GameInformation.Intelligence);
 		PlayerPrefs.SetInt("LUCK", GameInformation.Luck);
+
+		if(GameInformation.EquipmentOne != null){
+			PlayerInfoSerialization.Save("EQUIPMENTITEM1", GameInformation.EquipmentOne);
+		}
+
 		Debug.Log("SAVED ALL INFORMATION");
 	}
 }

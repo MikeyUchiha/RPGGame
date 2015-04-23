@@ -12,5 +12,9 @@ public class LoadInformation : MonoBehaviour {
 		GameInformation.Vitality = PlayerPrefs.GetInt("VITALITY");
 		GameInformation.Intelligence = PlayerPrefs.GetInt("INTELLIGENCE");
 		GameInformation.Luck = PlayerPrefs.GetInt("LUCK");
+
+		if(PlayerPrefs.GetString("EQUIPMENTITEM1") != null){
+			GameInformation.EquipmentOne = (BaseEquipment)PlayerInfoSerialization.Load("EQUIPMENTITEM1");
+		}
 	}
 }

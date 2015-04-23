@@ -7,6 +7,7 @@ public class GameInformation : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 	}
 
+	public static BaseEquipment EquipmentOne{get; set;}
 	public static string PlayerName{get; set;}
 	public static int PlayerLevel{get; set;}
 	public static BaseCharacterClass PlayerClass{get; set;}
