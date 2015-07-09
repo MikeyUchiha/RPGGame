@@ -6,6 +6,8 @@ public class BasePlayer {
 	public string PlayerName{get; set;}
 	public int PlayerLevel{get; set;}
 	public BaseCharacterClass PlayerClass{get; set;}
+	public int CurrentEXP{get; set;}
+	public int RequiredEXP{get; set;}
 	// Base Stats
 	public int Strength{get; set;}
 	public int Agility{get; set;}

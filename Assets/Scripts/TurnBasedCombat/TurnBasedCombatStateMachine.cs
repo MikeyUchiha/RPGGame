@@ -4,6 +4,8 @@ using System.Collections;
 
 public class TurnBasedCombatStateMachine : MonoBehaviour {
 
+	private bool hasAddedEXP = false;
+
 	public enum BattleStates{
 		START,
 		PLAYERCHOICE,
@@ -18,7 +20,7 @@ public class TurnBasedCombatStateMachine : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		hasAddedEXP = false;
 		currentState = BattleStates.START;
 		CreateButton();
 	}
@@ -36,6 +38,10 @@ public class TurnBasedCombatStateMachine : MonoBehaviour {
 		case (BattleStates.LOSE):
 			break;
 		case (BattleStates.WIN):
+			if(!hasAddedEXP){
+				IncreaseExperience.AddExperience();
+				hasAddedEXP = true;
+			}
 			break;
 		}
 	}

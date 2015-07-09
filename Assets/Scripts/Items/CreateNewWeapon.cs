@@ -39,11 +39,9 @@ public class CreateNewWeapon : MonoBehaviour {
 		newWeapon.WeaponType = (BaseWeapon.WeaponTypes)randomTemp;
 	}
 
-	string UppercaseFirst(string s)
-	{
+	string UppercaseFirst(string s){
 		// Check for empty string.
-		if (string.IsNullOrEmpty(s))
-		{
+		if (string.IsNullOrEmpty(s)){
 			return string.Empty;
 		}
 		// Return char and concat substring.

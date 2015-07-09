@@ -31,11 +31,9 @@ public class CreateNewEquipment : MonoBehaviour {
 		newEquipment.EquipmentType = (BaseEquipment.EquipmentTypes)randomTemp;
 	}
 
-	string UppercaseFirst(string s)
-	{
+	string UppercaseFirst(string s){
 		// Check for empty string.
-		if (string.IsNullOrEmpty(s))
-		{
+		if (string.IsNullOrEmpty(s)){
 			return string.Empty;
 		}
 		// Return char and concat substring.
