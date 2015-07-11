@@ -36,25 +36,15 @@ public class CreateNewCharacter : MonoBehaviour {
 	}
 
 	void CreateCharacter(){
-		squireClassToggle = GameObject.Find("isSquireClass").GetComponent<Toggle>();
-		isSquireClass = squireClassToggle.isOn;
-		mageClassToggle = GameObject.Find("isMageClass").GetComponent<Toggle>();
-		isMageClass = mageClassToggle.isOn;
+		isSquireClass = GameObject.Find("isSquireClass").GetComponent<Toggle>().isOn;
+		isMageClass = GameObject.Find("isMageClass").GetComponent<Toggle>().isOn;
 		if(isSquireClass){
 			newPlayer.PlayerClass = new BaseSquireClass();
 		}else if(isMageClass){
 			newPlayer.PlayerClass = new BaseMageClass();
 		}
-		playerNameInput = GameObject.Find("playerName").GetComponent<InputField>();
-		playerName = playerNameInput.text;
-		newPlayer.PlayerLevel = 1;
-		newPlayer.Strength = newPlayer.PlayerClass.Strength;
-		newPlayer.Agility = newPlayer.PlayerClass.Agility;
-		newPlayer.Dexterity = newPlayer.PlayerClass.Dexterity;
-		newPlayer.Vitality = newPlayer.PlayerClass.Vitality;
-		newPlayer.Intelligence = newPlayer.PlayerClass.Intelligence;
-		newPlayer.Luck = newPlayer.PlayerClass.Luck;
-		newPlayer.PlayerName = playerName;
+		playerName = GameObject.Find("playerName").GetComponent<InputField>().text;
+		CreateNewPlayer();
 		StoreNewPlayerInfo();
 		SaveInformation.SaveAllInformation();
 		Debug.Log("Player Name: " + newPlayer.PlayerName);
@@ -66,6 +56,7 @@ public class CreateNewCharacter : MonoBehaviour {
 		Debug.Log("Player Vitality: " + newPlayer.Vitality);
 		Debug.Log("Player Intelligence: " + newPlayer.Intelligence);
 		Debug.Log("Player Luck: " + newPlayer.Luck);
+		Debug.Log("Player Gold: " + newPlayer.Gold);
 	}
 
 	void LoadCharacter(){
@@ -81,5 +72,18 @@ public class CreateNewCharacter : MonoBehaviour {
 		GameInformation.Vitality = newPlayer.Vitality;
 		GameInformation.Intelligence = newPlayer.Intelligence;
 		GameInformation.Luck = newPlayer.Luck;
+		GameInformation.Gold = newPlayer.Gold;
+	}
+
+	private void CreateNewPlayer(){
+		newPlayer.PlayerName = playerName;
+		newPlayer.PlayerLevel = 1;
+		newPlayer.Strength = newPlayer.PlayerClass.Strength;
+		newPlayer.Agility = newPlayer.PlayerClass.Agility;
+		newPlayer.Dexterity = newPlayer.PlayerClass.Dexterity;
+		newPlayer.Vitality = newPlayer.PlayerClass.Vitality;
+		newPlayer.Intelligence = newPlayer.PlayerClass.Intelligence;
+		newPlayer.Luck = newPlayer.PlayerClass.Luck;
+		newPlayer.Gold = 100;
 	}
 }

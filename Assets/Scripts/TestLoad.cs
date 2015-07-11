@@ -15,6 +15,7 @@ public class TestLoad : MonoBehaviour {
 		Debug.Log("Player Vitality: " + GameInformation.Vitality);
 		Debug.Log("Player Intelligence: " + GameInformation.Intelligence);
 		Debug.Log("Player Luck: " + GameInformation.Luck);
+		Debug.Log("Player Gold: " + GameInformation.Gold);
 	}
 	
 	// Update is called once per frame
