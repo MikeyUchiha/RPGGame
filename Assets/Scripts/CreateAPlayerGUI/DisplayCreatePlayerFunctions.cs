@@ -5,7 +5,7 @@ using System.Collections;
 public class DisplayCreatePlayerFunctions : MonoBehaviour {
 
 	private int classSelection;
-	//private string[] classSelectionNames = new string[] {"Squire", "Mage", "Monk", "Thief", "Bowman", "Page"};
+	//private string[] classSelectionNames = new string[] {"Squire", "Mage", "Monk", "Thief", "Archer", "Page"};
 	public GameObject CreateAPlayerGUIPrefab;
 	public string selectedCharacter;
 
