@@ -9,12 +9,13 @@ public class CreateAPlayerGUI : MonoBehaviour {
 		FINALSETUP		// Add name and misc items
 	}
 
-	private DisplayCreatePlayerFunctions displayFunctions = new DisplayCreatePlayerFunctions();
+	public DisplayCreatePlayerFunctions displayFunctions;
 	public static CreateAPlayerStates currentState;
 
 	// Use this for initialization
 	void Start () {
 		currentState = CreateAPlayerStates.CLASSSELECTION;
+		ChangeUI();
 	}
 	
 	// Update is called once per frame

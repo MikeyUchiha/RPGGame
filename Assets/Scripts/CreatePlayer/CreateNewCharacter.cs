@@ -5,8 +5,6 @@ using System.Collections;
 public class CreateNewCharacter : MonoBehaviour {
 
 	private BasePlayer newPlayer;
-	private bool isSquireClass;
-	private bool isMageClass;
 	private string playerName = "Enter Name";
 	public GameObject ClassCreatePanel;
 	private Toggle squireClassToggle;
@@ -33,17 +31,12 @@ public class CreateNewCharacter : MonoBehaviour {
 		createCharacter.onClick.AddListener(() => {CreateCharacter();});
 		Button loadCharacter = GameObject.Find("loadCharacter").GetComponent<Button>();
 		loadCharacter.onClick.AddListener(() => {LoadCharacter();});
+		squireClassToggle = GameObject.Find("isSquireClass").GetComponent<Toggle>();
+		mageClassToggle = GameObject.Find("isMageClass").GetComponent<Toggle>();
+		squireClassToggle.isOn = true;
 	}
 
 	void CreateCharacter(){
-		isSquireClass = GameObject.Find("isSquireClass").GetComponent<Toggle>().isOn;
-		isMageClass = GameObject.Find("isMageClass").GetComponent<Toggle>().isOn;
-		if(isSquireClass){
-			newPlayer.PlayerClass = new BaseSquireClass();
-		}else if(isMageClass){
-			newPlayer.PlayerClass = new BaseMageClass();
-		}
-		playerName = GameObject.Find("playerName").GetComponent<InputField>().text;
 		CreateNewPlayer();
 		StoreNewPlayerInfo();
 		SaveInformation.SaveAllInformation();
@@ -66,6 +59,7 @@ public class CreateNewCharacter : MonoBehaviour {
 	private void StoreNewPlayerInfo(){
 		GameInformation.PlayerName = newPlayer.PlayerName;
 		GameInformation.PlayerLevel = newPlayer.PlayerLevel;
+		GameInformation.PlayerClass = newPlayer.PlayerClass;
 		GameInformation.Strength = newPlayer.Strength;
 		GameInformation.Agility = newPlayer.Agility;
 		GameInformation.Dexterity = newPlayer.Dexterity;
@@ -76,6 +70,12 @@ public class CreateNewCharacter : MonoBehaviour {
 	}
 
 	private void CreateNewPlayer(){
+		if(squireClassToggle.isOn){
+			newPlayer.PlayerClass = new BaseSquireClass();
+		}else if(mageClassToggle.isOn){
+			newPlayer.PlayerClass = new BaseMageClass();
+		}
+		playerName = GameObject.Find("playerName").GetComponent<InputField>().text;
 		newPlayer.PlayerName = playerName;
 		newPlayer.PlayerLevel = 1;
 		newPlayer.Strength = newPlayer.PlayerClass.Strength;

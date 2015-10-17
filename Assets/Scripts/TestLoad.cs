@@ -9,6 +9,7 @@ public class TestLoad : MonoBehaviour {
 		Debug.Log("LOADED ALL INFORMATION");
 		Debug.Log("Player Name: " + GameInformation.PlayerName);
 		Debug.Log("Player Level: " + GameInformation.PlayerLevel);
+		Debug.Log("Player Class: " + GameInformation.PlayerClass.CharacterClassName);
 		Debug.Log("Player Strength: " + GameInformation.Strength);
 		Debug.Log("Player Agility: " + GameInformation.Agility);
 		Debug.Log("Player Dexterity: " + GameInformation.Dexterity);
