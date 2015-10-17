@@ -14,6 +14,8 @@ public class LoadInformation : MonoBehaviour {
 		GameInformation.Luck = PlayerPrefs.GetInt("LUCK");
 		GameInformation.Gold = PlayerPrefs.GetInt("GOLD");
 
+		GameInformation.PlayerClass = (BaseCharacterClass)PlayerInfoSerialization.Load("PLAYERCLASS");
+
 		if(PlayerPrefs.GetString("EQUIPMENTITEM1") != null){
 			GameInformation.EquipmentOne = (BaseEquipment)PlayerInfoSerialization.Load("EQUIPMENTITEM1");
 		}

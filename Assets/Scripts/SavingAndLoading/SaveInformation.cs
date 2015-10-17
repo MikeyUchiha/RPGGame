@@ -14,6 +14,8 @@ public class SaveInformation {
 		PlayerPrefs.SetInt("LUCK", GameInformation.Luck);
 		PlayerPrefs.SetInt("GOLD", GameInformation.Gold);
 
+		PlayerInfoSerialization.Save("PLAYERCLASS", GameInformation.PlayerClass);
+
 		if(GameInformation.EquipmentOne != null){
 			PlayerInfoSerialization.Save("EQUIPMENTITEM1", GameInformation.EquipmentOne);
 		}
